@@ -5,6 +5,7 @@ const App = () => {
   const initialTaskState = {
     count: 0
   }
+  const [taskState, dispatch] = useReducer(counterReducer, initialTaskState)
 
   const counterReducer = (taskState, action) => {
     switch (action.type) {
@@ -21,7 +22,6 @@ const App = () => {
   }
 
  
-  const [taskState, dispatch] = useReducer(counterReducer, initialTaskState)
   return (
     <div id="main">
       <h1>Task Counter</h1>
@@ -29,7 +29,7 @@ const App = () => {
       <button id='addTaskBtn' onClick={() => dispatch({ type: 'add' })}>Add a task</button>
       <button id='delTaskBtn' onClick={() => dispatch({ type: 'delete' })}>Delete a task</button>
       <button id='delAllTaskBtn' onClick={() => dispatch({ type: 'deleteAll' })}>Delete all tasks</button>
-      <br /><br />
+  
       <h3 className='counter'> Number of Tasks : {taskState.count}</h3>
     </div>
   )
