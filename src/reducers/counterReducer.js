@@ -3,10 +3,10 @@ const counterReducer = (taskState, action) => {
     case 'increment':
       return { count: taskState.count + 1 }
     case 'decrement':
-      return { count: taskState.count - 1 }
+      return { count: taskState.count > 0 ? taskState.count - 1 : 0 }
 
     case 'reset':
-      return { count: taskState.count = 0 }
+      return { count: 0 }
     default:
       return taskState
   }

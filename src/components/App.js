@@ -6,20 +6,7 @@ const App = () => {
     count: 0
   }
 
-  // const counter = (taskState, action) => {
-  //   switch (action.type) {
-  //     case 'increment':
-  //       return { count: taskState.count + 1 }
-  //     case 'decrement':
-  //       return { count: taskState.count - 1 }
-
-  //     case 'reset':
-  //       return { count: taskState.count = 0 }
-  //     default:
-  //       return taskState;
-  //   }
-  // }
-
+ 
   const [taskState, dispatch] = useReducer(counterReducer, initialTaskState)
   return (
     <div id="main">
