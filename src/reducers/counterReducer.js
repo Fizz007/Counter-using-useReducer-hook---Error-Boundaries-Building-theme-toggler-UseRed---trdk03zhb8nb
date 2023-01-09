@@ -8,7 +8,7 @@ const counterReducer = (taskState, action) => {
     case 'reset':
       return { count: 0 }
     default:
-      return taskState
+     throw new Error()
   }
 }
 
